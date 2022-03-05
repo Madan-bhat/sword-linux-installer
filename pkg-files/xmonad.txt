@@ -1,0 +1,7 @@
+xmonad 
+xmonad-contrib
+polybar
+rofi
+playerctl
+brightnessctl
+sword-linux-xmonad
