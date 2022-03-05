@@ -2,6 +2,8 @@ xmonad
 xmonad-contrib
 polybar
 rofi
+picom-jonaburg-git
+xorg
+zsh
 playerctl
 brightnessctl
-sword-linux-xmonad
