@@ -250,16 +250,7 @@ echo -e "\n${disk%|*} selected \n"
 drivessd
 }
 
-connectToWifi(){
-  nmcli radio wifi on
-  nmcli dev wifi list
-  read -p "Please enter the name of the wifi :  " WIFI_NAME
-  read -p "Please enter the password for ${WIFI_NAME} :  " WIFI_PASSWORD
-  nmcli dev wifi connect ${WIFI_NAME} password "${WIFI_PASSWORD}"
-}
-
 userinfo () {
-connectToWifi
 read -p "Please enter your username: " username
 set_option USERNAME ${username,,} # convert to lower case as in issue #109 
 while true; do
