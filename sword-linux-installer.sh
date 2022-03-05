@@ -25,7 +25,7 @@ SWORD LINUX
 -------------------------------------------------------------------------
                     Automated Arch Linux Installer
 -------------------------------------------------------------------------
-                Scripts are in directory named ArchTitus
+                Scripts are in directory named sword linux
 "
     ( bash $SCRIPT_DIR/scripts/startup.sh )|& tee startup.log
       source $CONFIGS_DIR/setup.conf

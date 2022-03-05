@@ -10,7 +10,7 @@ echo -ne "
                                                                                      
 -------------------------------------------------------------------------
                     Automated Arch Linux Installer
-                        SCRIPTHOME: ArchTitus
+                        SCRIPTHOME: sword linux
 -------------------------------------------------------------------------
 
 Installing AUR Softwares

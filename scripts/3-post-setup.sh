@@ -87,7 +87,8 @@ else
   pacman -S base-devel
   git clone https://github.com/Madan-bhat/sword-linux-xmonad.git
   cd sword-linux-xmonad
-  makepkg -si
+  makepkg -si 
+  cp -r /etc/skel/.xmonad ${HOME}/.xmonad 
   sudo pacman -S --noconfirm --needed lightdm lightdm-gtk-greeter
   systemctl enable lightdm.service
   fi
