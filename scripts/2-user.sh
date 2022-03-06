@@ -66,12 +66,13 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     konsave -a kde
 
   elif [[ $DESKTOP_ENV == "xmonad" ]];then 
+  $AUR_HELPER -S --no-confirm ttf-dejavu ttf-liberation nerd-fonts-jetbrains-mono
   cd ~
   pacman -S base-devel
   git clone https://github.com/Madan-bhat/sword-linux-xmonad.git
   cd sword-linux-xmonad
   makepkg -si 
-  cp -r /etc/skel/.xmonad ${HOME}/.xmonad 
+  cp -r /etc/skel/.xmonad  /home/$USERNAME/.xmonad 
 
   elif [[ $DESKTOP_ENV == "openbox" ]]; then
     cd ~
