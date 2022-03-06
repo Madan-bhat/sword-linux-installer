@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 echo -ne "
--------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
 ███████╗██╗    ██╗ ██████╗ ██████╗ ██████╗     ██╗     ██╗███╗   ██╗██╗   ██╗██╗  ██╗
 ██╔════╝██║    ██║██╔═══██╗██╔══██╗██╔══██╗    ██║     ██║████╗  ██║██║   ██║╚██╗██╔╝
 ███████╗██║ █╗ ██║██║   ██║██████╔╝██║  ██║    ██║     ██║██╔██╗ ██║██║   ██║ ╚███╔╝ 
@@ -8,10 +8,10 @@ echo -ne "
 ███████║╚███╔███╔╝╚██████╔╝██║  ██║██████╔╝    ███████╗██║██║ ╚████║╚██████╔╝██╔╝ ██╗
 ╚══════╝ ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚═════╝     ╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝
                                                                                      
--------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
                     Automated Arch Linux Installer
                         SCRIPTHOME: sword linux
--------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
 
 Installing AUR Softwares
 "
@@ -50,7 +50,7 @@ if [[ ! $AUR_HELPER == none ]]; then
       continue
     fi
     echo "INSTALLING: ${line}"
-    $AUR_HELPER -S --noconfirm --needed ${line}
+    $AUR_HELPER -S --noconfirm --needed polybar ${line}
   done
 fi
 
@@ -64,6 +64,15 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     konsave -i ~/sword-linux-installer/configs/kde.knsv
     sleep 1
     konsave -a kde
+
+  elif [[ $DESKTOP_ENV == "xmonad" ]];then 
+  cd ~
+  pacman -S base-devel
+  git clone https://github.com/Madan-bhat/sword-linux-xmonad.git
+  cd sword-linux-xmonad
+  makepkg -si 
+  cp -r /etc/skel/.xmonad ${HOME}/.xmonad 
+
   elif [[ $DESKTOP_ENV == "openbox" ]]; then
     cd ~
     git clone https://github.com/stojshic/dotfiles-openbox
